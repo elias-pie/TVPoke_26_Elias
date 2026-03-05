@@ -91,7 +91,7 @@ class SelectedPokeImage(Image):
         super().__init__(pos, width, height, './TVPoke/Pokemon/imgs/' + name + '.png')
 
     def onClick(self, screen):
-        screen.state["selectedPoke"][screen.state["trainerIndex"]].remove(self)
+        screen.state["selectedPoke"][screen.state["trainerIndex"]].remove(self.name)
 
 class BackButton(Image):
     def __init__(self):
