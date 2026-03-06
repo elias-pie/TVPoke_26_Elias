@@ -1,0 +1,12 @@
+from TVPoke.BaseClasses.PokeTypes import Electric
+from TVPoke.BaseClasses.Move import Move
+
+class Pikachu(Electric):
+    def __init__(self):
+        moves = [
+            Move("Volt Tackle", "ELECTRIC", 120),
+            Move("Iron Tail", "ELECTRIC", 100),
+            Move("Quick Attack", "ELECTRIC", 40),
+            Move("Volt Thunderbolt", "ELECTRIC", 195)
+        ]
+        super().__init__("Pikachu", 95, moves, "./TVPoke/Pokemon/imgs/Pikachu.png")

@@ -5,7 +5,7 @@ from BattleScreen import BattleScreen
 ##-------------------------------------
 
 
-window = Window("Example App", (0,255,0)) ##Create the window to work with
+window = Window("TVPoke26", (0,255,0), './imgs/pokeIcon.png') ##Create the window to work with
 
 ##Create Screen Objects for use------
 selectScreen = SelectScreen(window)
