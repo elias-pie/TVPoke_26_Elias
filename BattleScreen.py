@@ -21,18 +21,22 @@ class BattleScreen(Screen):
         ]
 
     def changeturn(self):
-        self.trainers.reverse()
         self.trainers[1].removeFaintedPokemon()
         self.trainers[0].removeFaintedPokemon()
         if len(self.trainers[0].pokemon) == 0 or len(self.trainers[1].pokemon) == 0:
+            self.state['ded'] = "ded"
+        if len(self.trainers[0].pokemon) == 0 or len(self.trainers[1].pokemon) == 0:
+            for i in self.trainers:
+                print(i.myId)
             self.state['goTo'] = "WinScreen"
+
             if len(self.trainers[0].pokemon) == 0:
                 self.state['Winner'] = self.trainers[1].myId
-            else:
+                print('Trainer @ id 1 won')
+            elif len(self.trainers[1].pokemon) == 0:
+                print('Trainer @ id 0 won')
                 self.state['Winner'] = self.trainers[0].myId
-        if len(self.trainers[0].pokemon) == 0 or len(self.trainers[1].pokemon) == 0:
-            self.state['ded'] = "ded"
-        
+        self.trainers.reverse()
     def elementsToDisplay(self):
         self.elements = [
             Label((50, 90), 20, 10, ''),

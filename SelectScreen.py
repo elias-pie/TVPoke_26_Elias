@@ -57,7 +57,7 @@ class SelectScreen(Screen):
             yCoord += 100/4
             self.elements.append(SelectedPokeImage((75, yCoord), p, 20, 100/4))
         if len(self.state["selectedPoke"][self.state["trainerIndex"]]) == 3 and self.state["confirmed"] == True:
-            self.waitForNextFrame = 2
+            self.waitForNextFrame = 1
             self.elements.append(Label((75, 95), 50, 20, "Choosing Complete!", 30))
             self.state["confirmed"] = False
             if self.state["trainerIndex"] == 1:

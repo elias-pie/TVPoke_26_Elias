@@ -24,12 +24,10 @@ while True: ##Game loop
         selectScreen.state["goTo"] = ''
         screen = battleScreen
     if screen.state["goTo"] == 'WinScreen':
+        trueWinner = 'Error'
         winner = screen.state["Winner"]
-        if winner == 1:
-           trueWinner = 'Trainer 1'
-        else:
-            trueWinner = 'Trainer 2'
-        screen = WinScreen(window, trueWinner)
+        print(winner)
+        screen = WinScreen(window, winner)
 
 
 
